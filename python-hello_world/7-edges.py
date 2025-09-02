@@ -1,8 +1,4 @@
 #!/usr/bin/python3
-"""
-This module demonstrates string slicing by extracting parts of the word 'Holberton'.
-It prints the first 3 letters, last 2 letters, and the middle part of the word.
-"""
 word = "Holberton"
 word_first_3 = word[:3]
 word_last_2 = word[-2:]
