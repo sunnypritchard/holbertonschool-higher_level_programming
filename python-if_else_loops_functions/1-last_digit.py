@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+Print the last digit of a randomly generated number
+"""
 import random
 number = random.randint(-10000, 10000)
 last_digit = number % 10 if number >= 0 else -(abs(number) % 10)
