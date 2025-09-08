@@ -12,5 +12,5 @@ Returns:
 
 
 def print_list_integer(my_list=[]):
-    for item in range(len(my_list)):
-        print(my_list[item])
+    for i in range(len(my_list)):
+        print(my_list[i])
