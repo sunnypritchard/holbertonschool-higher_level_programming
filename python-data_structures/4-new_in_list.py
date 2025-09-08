@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 '''
 Function:
-    new_in_list(my_list, idx, element): replaces an element in a copy of a list 
+    new_in_list(my_list, idx, element): replaces an element in a copy of a list
     at a specific index
 
 Parameters:
