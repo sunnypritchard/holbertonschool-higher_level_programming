@@ -8,7 +8,8 @@ Parameters:
     matrix: list of lists of integers.
 
 Returns:
-    A new matrix representing the square value of all integers of the input matrix.
+    A new matrix representing the square value of all integers of the input
+    matrix.
 '''
 
 
