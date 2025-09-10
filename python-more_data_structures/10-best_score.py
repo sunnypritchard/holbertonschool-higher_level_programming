@@ -18,9 +18,7 @@ def best_score(a_dictionary):
     if not a_dictionary:
         return None
 
-    best_key = None
+    max_value = max(a_dictionary.values())
     for key, value in a_dictionary.items():
-        if best_key is None or value > a_dictionary[best_key]:
-            best_key = key
-        print(help(a_dictionary))
-    return best_key
+        if value == max_value:
+            return key
