@@ -8,7 +8,8 @@ Parameters:
     b (int or float): The denominator.
 
 Returns:
-    float or None: The result of the division, or None if division by zero occurs.
+    float or None: The result of the division, or None if division by zero
+    occurs.
 """
 
 

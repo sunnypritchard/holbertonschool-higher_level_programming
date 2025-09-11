@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Function:
-Prints x elements of a list.
+    Prints x elements of a list.
 
 Parameters:
     my_list (list): The list to print elements from.

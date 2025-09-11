@@ -1,10 +1,12 @@
 #!/usr/bin/python3
 '''
 Function:
-Prints the first x elements of a list that are integers.
+    Prints the first x elements of a list that are integers.
+
 Parameters:
     my_list (list): The list to print elements from.
     x (int): The number of elements to print.
+
 Returns:
     int: The number of integers actually printed.
 '''

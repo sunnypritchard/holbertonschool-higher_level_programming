@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Function:
-Safely prints an integer.
+    Safely prints an integer.
 
 Parameters:
     value: The value to print.
