@@ -4,3 +4,6 @@ This directory contains Python scripts that demonstrate the use of exceptions in
 
 These scripts cover a variety of common exceptions, including but not limited to:
 - `IndexError`
+- `ValueError`
+- `TypeError`
+- `ZeroDivisionError`
