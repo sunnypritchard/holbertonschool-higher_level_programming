@@ -17,6 +17,88 @@ Import the function:
     >>> add_integer(999999999, 1)
     1000000000
 
+# Boolean values (accepted as ints)
+    >>> add_integer(True, 2)
+    3
+    >>> add_integer(False, 2)
+    2
+    >>> add_integer(True, False)
+    1
+
+# Invalid types
+    >>> add_integer("1", 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+    >>> add_integer(1, "2")
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+    >>> add_integer([1], 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+    >>> add_integer(1, [2])
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+    >>> add_integer(None, 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+    >>> add_integer(1, None)
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+    >>> add_integer(1.5, 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+    >>> add_integer(1, 2.5)
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+# Both arguments invalid
+    >>> add_integer("1", "2")
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+# Missing arguments
+    >>> add_integer(1)
+    Traceback (most recent call last):
+    ...
+    TypeError: add_integer() missing 1 required positional argument: 'b'
+    >>> add_integer()
+    Traceback (most recent call last):
+    ...
+    TypeError: add_integer() missing 2 required positional arguments: 'a' and 'b'
+
+# Extra arguments
+    >>> add_integer(1, 2, 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: add_integer() takes 2 positional arguments but 3 were given
+Import the function:
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+# Valid integer inputs
+    >>> add_integer(1, 2)
+    3
+    >>> add_integer(-1, -2)
+    -3
+    >>> add_integer(1, -2)
+    -1
+    >>> add_integer(0, 0)
+    0
+    >>> add_integer(0, 5)
+    5
+    >>> add_integer(-5, 0)
+    -5
+    >>> add_integer(999999999, 1)
+    1000000000
+
 # Boolean values (should be accepted as ints)
     >>> add_integer(True, 2)
     3
