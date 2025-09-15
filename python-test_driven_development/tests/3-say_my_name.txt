@@ -1,0 +1,61 @@
+Test file for 3-say_my_name module
+===================================
+
+Import the function:
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+# Valid inputs
+    >>> say_my_name("John", "Doe")
+    My name is John Doe
+    >>> say_my_name("Alice", "Smith")
+    My name is Alice Smith
+
+# Edge cases
+    >>> say_my_name("", "")
+    My name is  
+    >>> say_my_name("A", "B")
+    My name is A B
+    >>> say_my_name("John", "")
+    My name is John 
+    >>> say_my_name("", "Doe")
+    My name is  Doe
+
+# Special characters
+    >>> say_my_name("J@hn", "D0e")
+    My name is J@hn D0e
+    >>> say_my_name(" ", " ")
+    My name is   
+
+# Invalid types
+    >>> say_my_name(123, "Doe")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+    >>> say_my_name("John", 456)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+    >>> say_my_name(None, "Doe")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+    >>> say_my_name("John", None)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+# Missing arguments
+    >>> say_my_name("John")
+    Traceback (most recent call last):
+    ...
+    TypeError: say_my_name() missing 1 required positional argument: 'last_name'
+    >>> say_my_name()
+    Traceback (most recent call last):
+    ...
+    TypeError: say_my_name() missing 2 required positional arguments: 'first_name' and 'last_name'
+
+# Extra arguments
+    >>> say_my_name("John", "Doe", "Extra")
+    Traceback (most recent call last):
+    ...
+    TypeError: say_my_name() takes 2 positional arguments but 3 were given
