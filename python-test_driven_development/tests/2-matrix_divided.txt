@@ -1,0 +1,35 @@
+Test file for 2-matrix_divided module
+===================================
+
+Import the function:
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Test the function with a valid matrix and divisor:
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> div = 2
+    >>> matrix_divided(matrix, div)
+    [[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
+
+Test the function with a non-numeric divisor:
+    >>> matrix_divided(matrix, "2")
+    Traceback (most recent call last):
+        ...
+    TypeError: div must be a number
+
+Test the function with a zero divisor:
+    >>> matrix_divided(matrix, 0)
+    Traceback (most recent call last):
+        ...
+    ZeroDivisionError: division by zero
+
+Test the function with an invalid matrix (not a list of lists):
+    >>> matrix_divided(42, 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test the function with an invalid matrix (rows of different sizes):
+    >>> matrix_divided([[1, 2], [3, 4, 5]], 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: Each row of the matrix must be of the same size
