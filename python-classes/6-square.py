@@ -87,8 +87,8 @@ class Square:
     def my_print(self):
         """Prints the square with the character #, considering position.
 
-        If size is 0, prints an empty line. Position[1] adds new lines before the square,
-        position[0] adds spaces before each line of the square.
+        If size is 0, prints an empty line. Position[1] adds new lines before
+        the square, position[0] adds spaces before each line of the square.
         """
         if self.size == 0:
             print()
