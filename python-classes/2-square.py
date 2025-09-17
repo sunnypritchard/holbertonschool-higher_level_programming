@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Module containing the Square class with input validation.
+This module contains a class Square that defines a square by size with
+input validation.
 """
 
 
