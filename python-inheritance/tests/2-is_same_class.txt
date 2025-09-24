@@ -1,0 +1,24 @@
+doctest for is_same_class function
+==================================
+
+>>> is_same_class = __import__('2-is_same_class').is_same_class
+
+
+# Test case 1: Is an instance of the specified class
+>>> class A: pass
+>>> obj = A()
+>>> is_same_class(obj, A)
+True
+
+# Test case 2: Is an instance of a Subclass of the specified class
+>>> class Base: pass
+>>> class Sub(Base): pass
+>>> obj = Sub()
+>>> is_same_class(obj, Base)
+False
+
+# Test case 3: Is not an instance of the specified class
+>>> class B: pass
+>>> obj = A()
+>>> is_same_class(obj, B)
+False
