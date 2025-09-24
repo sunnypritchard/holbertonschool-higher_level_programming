@@ -8,33 +8,37 @@ Test file for MyList class methods print_sorted
 >>> my_list.append(3)
 >>> my_list.append(1)
 >>> my_list.append(2)
->>> my_list.print_sorted()
-[1, 2, 3]
-
-# Test case 2: Append more elements and print sorted
 >>> my_list.append(5)
 >>> my_list.append(4)
+>>> my_list
+[3, 1, 2, 5, 4]
 >>> my_list.print_sorted()
 [1, 2, 3, 4, 5]
 
-# Test case 3: Print sorted on an empty MyList
->>> empty_list = MyList()
->>> empty_list.print_sorted()
-[]
-
-# Test case 4: Print sorted on a MyList with negative and positive numbers
+# Test case 2: Print sorted on a MyList with negative and positive numbers
 >>> mixed_list = MyList()
->>> mixed_list.append(-1)
->>> mixed_list.append(0)
 >>> mixed_list.append(1)
+>>> mixed_list.append(0)
+>>> mixed_list.append(-1)
+>>> mixed_list
+[1, 0, -1]
 >>> mixed_list.print_sorted()
 [-1, 0, 1]
 
-# Test case 5: Print sorted on a MyList with duplicate numbers
+# Test case 3: Print sorted on a MyList with duplicate numbers
 >>> dup_list = MyList()
 >>> dup_list.append(2)
 >>> dup_list.append(2)
 >>> dup_list.append(1)
 >>> dup_list.append(1)
+>>> dup_list
+[2, 2, 1, 1]
 >>> dup_list.print_sorted()
 [1, 1, 2, 2]
+
+# Test case 4: Print sorted on an empty MyList
+>>> empty_list = MyList()
+>>> empty_list
+[]
+>>> empty_list.print_sorted()
+[]
