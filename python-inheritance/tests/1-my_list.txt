@@ -1,4 +1,4 @@
-
+>>> MyList = __import__('1-my_list').MyList
 >>> my_list = MyList()
 >>> my_list.append(1)
 >>> my_list.append(4)
@@ -16,8 +16,10 @@
 >>> my_list.print_sorted()
 [-5, 1, 2, 3, 4, 5, 7, 8, 9, 10]
 
-# Test larger integers and smaller (negative) integers
->>> my_list.append(999999)
->>> my_list.append(-1000000)
+# Test with zero and negative numbers
+>>> my_list.append(0)
+>>> my_list.append(-1)
 >>> my_list
-[1, 4, 2, 3, 5, 10, 7, -5, 8, 9, 999999, -1000000]
+[1, 4, 2, 3, 5, 10, 7, -5, 8, 9, 0, -1]
+>>> my_list.print_sorted()
+[-5, -1, 0, 1, 2, 3, 4, 5, 7, 8, 9, 10]
