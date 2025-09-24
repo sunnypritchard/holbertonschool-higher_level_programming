@@ -7,5 +7,7 @@ Test file for MyList class methods print_sorted
 >>> my_list.append(2)
 >>> my_list.append(0)
 >>> my_list.append(-5)
+>>> my_list
+[3, 1, 2, 0, -5]
 >>> my_list.print_sorted()
 [-5, 0, 1, 2, 3]
