@@ -1,0 +1,26 @@
+Test for is_kind_of_class function
+==================================
+
+>>> is_kind_of_class = __import__('3-is_kind_of_class').is_kind_of_class
+
+# Define test classes
+>>> class Base: pass
+>>> class Derived(Base): pass
+>>> base_instance = Base()
+>>> derived_instance = Derived()
+
+# Test case 1: Is an instance of the specified class
+>>> is_kind_of_class(base_instance, Base)
+True
+
+# Test case 2: Is an instance of a Subclass of the specified class
+>>> is_kind_of_class(derived_instance, Base)
+True
+
+# Test case 3: Is an instance of the specified subclass
+>>> is_kind_of_class(derived_instance, Derived)
+True
+
+# Test case 4: Is not an instance of the specified class
+>>> is_kind_of_class(base_instance, Derived)
+False
