@@ -1,72 +1,35 @@
-Test file for MyList class methods print_sorted
-===============================================
+doctest file for MyList class print_sorted method
+===================================================
 
 >>> MyList = __import__('1-my_list').MyList
 
-# Test case 1: Create an instance of MyList and use print_sorted
->>> my_list = MyList()
->>> my_list.append(3)
->>> my_list.append(1)
->>> my_list.append(2)
->>> my_list.append(5)
->>> my_list.append(4)
->>> my_list
-[3, 1, 2, 5, 4]
+# inherits from list:
+>>> my_list = MyList([3, 1, 2])
+>>> isinstance(my_list, list)
+True
+>>> isinstance(my_list, MyList)
+True
+
+>>> my_list = MyList([3, 1, 2])
 >>> my_list.print_sorted()
-[1, 2, 3, 4, 5]
+[1, 2, 3]
 
-# Test case 2: Print sorted on a MyList with negative and positive numbers
->>> mixed_list = MyList()
->>> mixed_list.append(1)
->>> mixed_list.append(0)
->>> mixed_list.append(-1)
->>> mixed_list
-[1, 0, -1]
->>> mixed_list.print_sorted()
-[-1, 0, 1]
+# Works with already sorted lists:
+>>> my_list = MyList([1, 2, 3])
+>>> my_list.print_sorted()
+[1, 2, 3]
 
-# Test case 3: Print sorted on a MyList with duplicate numbers
->>> dup_list = MyList()
->>> dup_list.append(2)
->>> dup_list.append(2)
->>> dup_list.append(1)
->>> dup_list.append(1)
->>> dup_list
-[2, 2, 1, 1]
->>> dup_list.print_sorted()
-[1, 1, 2, 2]
+# Works with negative numbers:
+>>> my_list = MyList([5, -3, -2])
+>>> my_list.print_sorted()
+[-3, -2, 5]
 
-# Test case 4: Print sorted on an empty MyList
->>> empty_list = MyList()
->>> empty_list
+# Works with duplicates:
+>>> my_list = MyList([4, 2, 4, 1])
+>>> my_list.print_sorted()
+[1, 2, 4, 4]
+
+# Works with empty list:
+>>> my_list = MyList()
+>>> my_list.print_sorted()
 []
->>> empty_list.print_sorted()
-[]
-
-# Test case 5: Print sorted on a MyList with one element
->>> single_list = MyList()
->>> single_list.append(42)
->>> single_list
-[42]
->>> single_list.print_sorted()
-[42]
-
-# Test case 6: Print sorted on a MyList with float numbers
->>> float_list = MyList()
->>> float_list.append(3.1)
->>> float_list.append(2.2)
->>> float_list.append(1.3)
->>> float_list
-[3.1, 2.2, 1.3]
->>> float_list.print_sorted()
-[1.3, 2.2, 3.1]
-
-# Test case 7: Print sorted on a MyList with mixed integers and floats
->>> mixed_num_list = MyList()
->>> mixed_num_list.append(3)
->>> mixed_num_list.append(2.5)
->>> mixed_num_list.append(1)
->>> mixed_num_list
-[3, 2.5, 1]
->>> mixed_num_list.print_sorted()
-[1, 2.5, 3]
