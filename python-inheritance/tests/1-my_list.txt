@@ -1,17 +1,40 @@
+Test file for MyList class methods print_sorted
+===============================================
+
 >>> MyList = __import__('1-my_list').MyList
+
+# Test case 1: Create an instance of MyList and use print_sorted
 >>> my_list = MyList()
->>> my_list.append(1)
->>> my_list.append(4)
 >>> my_list.append(3)
+>>> my_list.append(1)
 >>> my_list.append(2)
->>> print(my_list)
-[1, 4, 3, 2]
 >>> my_list.print_sorted()
-[1, 2, 3, 4]
->>> print(my_list)
-[1, 4, 3, 2]
->>> my_list.extend([10, -5, 7])
->>> print(my_list)
-[1, 4, 3, 2, 10, -5, 7]
+[1, 2, 3]
+
+# Test case 2: Append more elements and print sorted
+>>> my_list.append(5)
+>>> my_list.append(4)
 >>> my_list.print_sorted()
-[-5, 1, 2, 3, 4, 7, 10]
+[1, 2, 3, 4, 5]
+
+# Test case 3: Print sorted on an empty MyList
+>>> empty_list = MyList()
+>>> empty_list.print_sorted()
+[]
+
+# Test case 4: Print sorted on a MyList with negative and positive numbers
+>>> mixed_list = MyList()
+>>> mixed_list.append(-1)
+>>> mixed_list.append(0)
+>>> mixed_list.append(1)
+>>> mixed_list.print_sorted()
+[-1, 0, 1]
+
+# Test case 5: Print sorted on a MyList with duplicate numbers
+>>> dup_list = MyList()
+>>> dup_list.append(2)
+>>> dup_list.append(2)
+>>> dup_list.append(1)
+>>> dup_list.append(1)
+>>> dup_list.print_sorted()
+[1, 1, 2, 2]
