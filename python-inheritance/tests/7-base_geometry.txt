@@ -22,28 +22,38 @@ Test the area() method (which should raise an Exception):
 
 Test the integer_validator() method:
 
-Positive integer (no exception should be raised)
+Value is positive (no exception should be raised)
     >>> bg.integer_validator("positive", 1)
 
-Zero (should raise an ValueError)
+Value is less than or equal to 0 (should raise a ValueError)
     >>> bg.integer_validator("zero", 0)
     Traceback (most recent call last):
     ...
     ValueError: zero must be greater than 0
 
-Negative integer (should raise an ValueError)
     >>> bg.integer_validator("negative", -1)
     Traceback (most recent call last):
     ...
     ValueError: negative must be greater than 0
 
-Non-integer (should raise a TypeError)
+Value is not an integer (should raise a TypeError)
     >>> bg.integer_validator("string", "hello")
     Traceback (most recent call last):
     ...
     TypeError: string must be an integer
 
-    >>> bg.integer_validator("float", 3.14)
+    >>> bg.integer_validator("none", None)
     Traceback (most recent call last):
     ...
-    TypeError: float must be an integer
+    TypeError: none must be an integer
+
+Incorrect usage of integer_validator (should raise a TypeError)
+    >>> bg.integer_validator()
+    Traceback (most recent call last):
+    ...
+    TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+    
+    >>> bg.integer_validator("only_name")
+    Traceback (most recent call last):
+    ...
+    TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
