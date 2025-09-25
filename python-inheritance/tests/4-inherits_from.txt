@@ -21,3 +21,9 @@ True
 >>> a_obj = A()
 >>> inherits_from(a_obj, B)
 False
+
+# Test case 4: Is not inheritance (unrelated classes)
+>>> class D: pass
+>>> d_obj = D()
+>>> inherits_from(d_obj, A)
+False
