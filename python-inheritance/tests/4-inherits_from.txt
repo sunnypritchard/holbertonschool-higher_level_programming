@@ -1,0 +1,23 @@
+Test for inherits_from function
+================================
+>>> inherits_from = __import__('4-inherits_from').inherits_from
+
+# Define test classes
+>>> class A: pass
+>>> class B(A): pass
+>>> class C(B): pass
+
+# Test case 1: Is subclass inheritance
+>>> b_obj = B()
+>>> inherits_from(b_obj, A)
+True
+
+# Test case 2: Is indirect inheritance
+>>> c_obj = C()
+>>> inherits_from(c_obj, A)
+True
+
+# Test case 3: Is not inheritance (same class)
+>>> a_obj = A()
+>>> inherits_from(a_obj, B)
+False
