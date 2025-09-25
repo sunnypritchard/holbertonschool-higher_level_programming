@@ -75,3 +75,9 @@ Value is not an integer (should raise a TypeError)
     Traceback (most recent call last):
     ...
     TypeError: bool must be an integer
+
+    >>> bg.integer_validator("bool", False)
+    Traceback (most recent call last):
+    ...
+    TypeError: bool must be an integer
+    
