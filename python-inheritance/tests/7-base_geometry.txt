@@ -42,3 +42,8 @@ Non-integer (should raise a TypeError)
     Traceback (most recent call last):
     ...
     TypeError: string must be an integer
+
+    >>> bg.integer_validator("float", 3.14)
+    Traceback (most recent call last):
+    ...
+    TypeError: float must be an integer

@@ -5,19 +5,7 @@ Module that defines a class BaseGeometry with an unimplemented area method.
 
 
 class BaseGeometry:
-    """A base class for geometry-related classes."""
-
-    """
-    >>> BseGeometry.validate_integer("name", 5)
-    >>> BaseGeometry.validate_integer("name", 0)
-    Traceback (most recent call last):
-        ...
-    ValueError: name must be greater than 0
-    >>> BaseGeometry.validate_integer("name", -5)
-    Traceback (most recent call last):
-        ...
-    ValueError: name must be greater than 0
-    """
+    """A class representing base geometry."""
 
     def area(self):
         """Raise an exception because area is not implemented."""
@@ -34,6 +22,6 @@ class BaseGeometry:
             ValueError: must be greater than 0.
         """
         if type(value) is not int:
-            raise TypeError(f"{name} must be an integer")
+            raise TypeError("{} must be an integer".format(name))
         if value <= 0:
-            raise ValueError(f"{name} must be greater than 0")
+            raise ValueError("{} must be greater than 0".format(name))
