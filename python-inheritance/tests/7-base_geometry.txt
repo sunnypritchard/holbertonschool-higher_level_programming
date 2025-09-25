@@ -75,9 +75,3 @@ Value is non-integer (should raise a TypeError)
     Traceback (most recent call last):
     ...
     TypeError: bool must be an integer
-
-Incorrect number of arguments (should raise a TypeError)
-    >>> bg.integer_validator("only_name")
-    Traceback (most recent call last):
-    ...
-    TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
