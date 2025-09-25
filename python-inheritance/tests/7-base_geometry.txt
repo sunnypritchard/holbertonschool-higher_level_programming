@@ -85,8 +85,18 @@ Value is non-integer (should raise a TypeError)
     Traceback (most recent call last):
     ...
     TypeError: complex must be an integer
-    
+
     >>> bg.integer_validator("bytes", b'byte')
     Traceback (most recent call last):
     ...
     TypeError: bytes must be an integer
+
+    >>> bg.integer_validator("bytearray", bytearray(b'byte'))
+    Traceback (most recent call last):
+    ...
+    TypeError: bytearray must be an integer
+    
+    >>> bg.integer_validator("frozenset", frozenset([1, 2, 3]))
+    Traceback (most recent call last):
+    ...
+    TypeError: frozenset must be an integer
