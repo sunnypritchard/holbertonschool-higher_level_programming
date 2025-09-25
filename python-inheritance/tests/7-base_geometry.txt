@@ -76,37 +76,18 @@ Value is non-integer (should raise a TypeError)
     ...
     TypeError: bool must be an integer
 
-    >>> bg.integer_validator("bool", False)
+Incorrect number of arguments (should raise a TypeError)
+    >>> bg.integer_validator()
     Traceback (most recent call last):
     ...
-    TypeError: bool must be an integer
+    TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
-    >>> bg.integer_validator("complex", 1 + 2j)
+    >>> bg.integer_validator("only_name")
     Traceback (most recent call last):
     ...
-    TypeError: complex must be an integer
+    TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
 
-    >>> bg.integer_validator("bytes", b'byte')
+    >>> bg.integer_validator("name", 1, "extra_arg")
     Traceback (most recent call last):
     ...
-    TypeError: bytes must be an integer
-
-    >>> bg.integer_validator("bytearray", bytearray(b'byte'))
-    Traceback (most recent call last):
-    ...
-    TypeError: bytearray must be an integer
-
-    >>> bg.integer_validator("frozenset", frozenset([1, 2, 3]))
-    Traceback (most recent call last):
-    ...
-    TypeError: frozenset must be an integer
-
-    >>> bg.integer_validator("range", range(5))
-    Traceback (most recent call last):
-    ...
-    TypeError: range must be an integer
-    
-    >>> bg.integer_validator("memoryview", memoryview(b'byte'))
-    Traceback (most recent call last):
-    ...
-    TypeError: memoryview must be an integer
+    TypeError: BaseGeometry.integer_validator() takes 3 positional arguments but 4 were given
