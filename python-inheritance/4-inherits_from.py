@@ -7,8 +7,8 @@ specified class, excluding instances of the class itself.
 
 def inherits_from(obj, a_class):
     """
-    Return True if obj is an instance of a subclass of a_class or an inheritance
-    of a_class; otherwise False.
+    Return True if obj is an instance of a subclass of a_class or aninheritance
+    inheritance of a_class; otherwise False.
 
     param:
         obj: The object to check.
