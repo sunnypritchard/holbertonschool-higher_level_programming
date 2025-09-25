@@ -41,3 +41,22 @@ TypeError: <name> must be an integer
 Traceback (most recent call last):
     ...
 TypeError: <name> must be an integer
+
+# Test case 8: Non-integer value (dict)
+>>> bg.integer_validator("<name>", {"key": "value"})
+Traceback (most recent call last):
+    ...
+TypeError: <name> must be an integer
+
+# Test case 9: Non-integer value (tuple)
+>>> bg.integer_validator("<name>", (1, 2))
+Traceback (most recent call last):
+    ...
+TypeError: <name> must be an integer
+
+# Test case 10: Non-integer value (set)
+>>> bg.integer_validator("<name>", {1, 2})
+Traceback (most recent call last):
+    ...
+TypeError: <name> must be an integer
+
