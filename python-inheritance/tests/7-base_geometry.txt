@@ -62,3 +62,7 @@ Value is not an integer (should raise a TypeError)
     ...
     TypeError: set must be an integer
     
+    >>> bg.integer_validator("tuple", (1, 2))
+    Traceback (most recent call last):
+    ...
+    TypeError: tuple must be an integer
