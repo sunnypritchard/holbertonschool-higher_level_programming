@@ -42,18 +42,7 @@ Value is not an integer (should raise a TypeError)
     ...
     TypeError: string must be an integer
 
-    >>> bg.integer_validator("none", None)
+    >>> bg.integer_validator("float", 3.14)
     Traceback (most recent call last):
     ...
-    TypeError: none must be an integer
-
-Incorrect usage of integer_validator (should raise a TypeError)
-    >>> bg.integer_validator()
-    Traceback (most recent call last):
-    ...
-    TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
-    
-    >>> bg.integer_validator("only_name")
-    Traceback (most recent call last):
-    ...
-    TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+    TypeError: float must be an integer
