@@ -36,7 +36,7 @@ Value is less than or equal to 0 (should raise a ValueError)
     ...
     ValueError: negative must be greater than 0
 
-Value is not an integer (should raise a TypeError)
+Value is non-integer (should raise a TypeError)
     >>> bg.integer_validator("string", "hello")
     Traceback (most recent call last):
     ...
@@ -80,4 +80,13 @@ Value is not an integer (should raise a TypeError)
     Traceback (most recent call last):
     ...
     TypeError: bool must be an integer
+
+    >>> bg.integer_validator("complex", 1 + 2j)
+    Traceback (most recent call last):
+    ...
+    TypeError: complex must be an integer
     
+    >>> bg.integer_validator("bytes", b'byte')
+    Traceback (most recent call last):
+    ...
+    TypeError: bytes must be an integer
