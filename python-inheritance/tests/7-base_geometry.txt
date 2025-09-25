@@ -1,62 +1,63 @@
-Test the integer_validator method of BaseGeometry
-==================================================
+The ``7-base_geometry`` module
+===============================
+
+Using the ``BaseGeometry`` class
+---------------------------------
+
+This is a test file for the ``BaseGeometry`` class defined in the
+``7-base_geometry`` module. It tests the ``area()`` method and the
+``integer_validator(name, value)`` method.
+
+First, import the ``BaseGeometry`` class from the module:
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+# Create an instance of BaseGeometry
 >>> bg = BaseGeometry()
 
-# Test case 1: Valid integer
+# Test case 1: area() method should raise an Exception
+>>> bg.area()
+Traceback (most recent call last):
+    ...
+Exception: area() is not implemented
+
+# Test case 2: Valid integer (raise no Exception)  
 >>> bg.integer_validator("<name>", 1)
 
-# Test case 2: Zero value
+# Test case 3: Zero value (raise a ValueError)
 >>> bg.integer_validator("<name>", 0)
 Traceback (most recent call last):
     ...
 ValueError: <name> must be greater than 0
 
-# Test case 3: Negative integer
->>> bg.integer_validator("<name>", -5)
+# Test case 4: Negative value (raise a ValueError)
+>>> bg.integer_validator("<name>", -1)
 Traceback (most recent call last):
     ...
 ValueError: <name> must be greater than 0
 
-# Test case 4: Non-integer value (float)
->>> bg.integer_validator("<name>", 3.5)
-Traceback (most recent call last):
-    ...
-TypeError: <name> must be an integer
+# Test case 5: Non-integer value (raise a TypeError)
+    >>> bg.integer_validator("<name>", 3.14)
+    Traceback (most recent call last):
+        ...
+    TypeError: <name> must be an integer
 
-# Test case 5: Non-integer value (string)
->>> bg.integer_validator("<name>", "string")
-Traceback (most recent call last):
-    ...
-TypeError: <name> must be an integer
+    >>> bg.integer_validator("<name>", "5")
+    Traceback (most recent call last):
+        ...
+    TypeError: <name> must be an integer
 
-# Test case 6: Non-integer value (list)
->>> bg.integer_validator("<name>", [1, 2, 3])
-Traceback (most recent call last):
-    ...
-TypeError: <name> must be an integer
+    >>> bg.integer_validator("<name>", None)
+    Traceback (most recent call last):
+        ...
+    TypeError: <name> must be an integer
 
-# Test case 7: Non-integer value (None)
->>> bg.integer_validator("<name>", None)
-Traceback (most recent call last):
-    ...
-TypeError: <name> must be an integer
+# Test case 6: missing arguments (raise a TypeError)
+    >>> bg.integer_validator()
+    Traceback (most recent call last):
+        ...
+    TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
-# Test case 8: Non-integer value (dict)
->>> bg.integer_validator("<name>", {"key": "value"})
-Traceback (most recent call last):
-    ...
-TypeError: <name> must be an integer
-
-# Test case 9: Non-integer value (tuple)
->>> bg.integer_validator("<name>", (1, 2))
-Traceback (most recent call last):
-    ...
-TypeError: <name> must be an integer
-
-# Test case 10: Non-integer value (set)
->>> bg.integer_validator("<name>", {1, 2})
-Traceback (most recent call last):
-    ...
-TypeError: <name> must be an integer
-
+    >>> bg.integer_validator("<name>")
+    Traceback (most recent call last):
+        ...
+    TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
