@@ -1,0 +1,15 @@
+Test for BaseGeometry class
+===========================
+>>> BaseGeometry = __import__('5-base_geometry').BaseGeometry
+
+
+# Test case: Create an instance of BaseGeometry and check its type
+>>> Base = BaseGeometry()
+>>> type(Base) is BaseGeometry
+True
+
+# Test case: Check if Base is an instance of BaseGeometry
+>>> isinstance(Base, BaseGeometry)
+True
+
+
