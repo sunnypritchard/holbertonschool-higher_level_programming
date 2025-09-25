@@ -59,3 +59,43 @@ TypeError: <name> must be an integer
 Traceback (most recent call last):
     ...
 TypeError: <name> must be an integer
+
+# Test case 11: Non-integer value (complex number)
+>>> bg.integer_validator("<name>", 2 + 3j)
+Traceback (most recent call last):
+    ...
+TypeError: <name> must be an integer
+
+# Test case 12: Non-integer value (bytes)
+>>> bg.integer_validator("<name>", b'bytes')
+Traceback (most recent call last):
+    ...
+TypeError: <name> must be an integer
+
+# Test case 13: Non-integer value (bytearray)
+>>> bg.integer_validator("<name>", bytearray(b'bytearray'))
+Traceback (most recent call last):
+    ...
+TypeError: <name> must be an integer
+
+# Test case 14: Non-integer value (frozenset)
+>>> bg.integer_validator("<name>", frozenset([1, 2, 3]))
+Traceback (most recent call last):
+    ...
+TypeError: <name> must be an integer
+
+
+# Test case 15: Non-integer value (function)
+>>> def sample_function(): pass
+>>> bg.integer_validator("<name>", sample_function)
+Traceback (most recent call last):
+    ...
+TypeError: <name> must be an integer
+
+# Test case 16: Non-integer value (object instance)
+>>> class SampleClass: pass
+>>> obj = SampleClass()
+>>> bg.integer_validator("<name>", obj)
+Traceback (most recent call last):
+    ...
+TypeError: <name> must be an integer
