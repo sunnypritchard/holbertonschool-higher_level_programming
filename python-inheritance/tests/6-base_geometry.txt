@@ -1,0 +1,13 @@
+Test the area() method of BaseGeometry
+=======================================
+>>> BaseGeometry = __import__('6-base_geometry').BaseGeometry
+
+# Create an subclass of BaseGeometry
+>>> class SubClass(BaseGeometry): pass
+>>> sub_instance = SubClass()
+
+# Attempt to call the area method, which should raise an Exception
+>>> sub_instance.area()
+Traceback (most recent call last):
+  ...
+Exception: area() is not implemented
