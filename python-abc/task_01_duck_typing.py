@@ -3,6 +3,7 @@
 
 from abc import ABC, abstractmethod
 from math import pi
+from turtle import shape
 
 
 class Shape(ABC):
@@ -64,19 +65,4 @@ def shape_info(shape):
     Args:
         shape: Any object that implements area() and perimeter() methods
     """
-    print(f"Area: {shape.area()}")
-    print(f"Perimeter: {shape.perimeter()}")
-
-
-# Testing the duck typing functionality
-if __name__ == "__main__":
-    # Create instances of Circle and Rectangle
-    circle = Circle(radius=5)
-    rectangle = Rectangle(width=4, height=7)
-
-    # Test the shape_info function with both objects
-    print("Circle Information:")
-    shape_info(circle)
-
-    print("\nRectangle Information:")
-    shape_info(rectangle)
+    print("Area: {}\nPerimeter: {}".format(shape.area(), shape.perimeter()))
