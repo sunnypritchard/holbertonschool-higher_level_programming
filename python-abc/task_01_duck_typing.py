@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """Module demonstrating duck typing in Python."""
-import math
+
 from abc import ABC, abstractmethod
+from math import pi
 
 
 class Shape(ABC):
@@ -17,25 +18,41 @@ class Shape(ABC):
 
 
 class Circle(Shape):
+    """Concrete class representing a circle, inheriting from Shape.
+
+    Args:
+        radius (float): The radius of the circle.
+    """
     def __init__(self, radius):
         self.radius = radius
 
     def area(self):
-        return math.pi * (self.radius ** 2)
+        """Compute the area of the circle."""
+        return pi * (self.radius ** 2)
 
     def perimeter(self):
-        return 2 * math.pi * self.radius
+        """Compute the perimeter (circumference) of the circle."""
+        return 2 * pi * self.radius
 
 
 class Rectangle(Shape):
-    def __init__(self, width, height):
+    """Concrete class representing a rectangle, inheriting from Shape.
+
+    Args:
+        width: The width of the rectangle.
+        height: The height of the rectangle.
+    """
+
+    def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
 
     def area(self):
-        return self.width * self.height
+        """Compute the area of the rectangle."""
+        return self.height * self.width
 
     def perimeter(self):
+        """Compute the perimeter of the rectangle."""
         return 2 * (self.width + self.height)
 
 
