@@ -1,0 +1,23 @@
+The `write_file` function
+=========================
+
+Using the `with` statement
+---------------------------
+
+This is a test file for the `write_file` function, 
+which writes a string to a text file and returns the number of characters written.
+The function uses the `with` statement to ensure that the file is properly closed after its suite finishes, 
+even if an exception is raised.
+
+First, import the `write_file` function from the `1-write_file` module:
+    >>> write_file = __import__('1-write_file').write_file
+
+Call the `write_file` function with the path to the text file and the string to write:
+    >>> nb_char = write_file("my_first_file.txt", "This School is so cool!\n")
+    >>> nb_char
+    24
+
+Check the content of the file to ensure it was written correctly:
+    >>> print(open("my_first_file.txt").read())
+    This School is so cool!
+    <BLANKLINE>
