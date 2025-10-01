@@ -1,0 +1,28 @@
+The `read_file` function
+=========================
+
+Using the `with` statement
+---------------------------
+
+This is a test file for the `read_file` function, 
+which reads a text file and prints its contents to the standard output (stdout).
+The function uses the `with` statement to ensure that the file is properly closed after its suite finishes, 
+even if an exception is raised.
+
+First, import the `read_file` function from the `0-read_file` module:
+    >>> read_file = __import__('0-read_file').read_file
+
+Next, call the `read_file` function with the path to the text file:
+    >>> read_file("my_file_0.txt")
+    We offer a truly innovative approach to education:
+    focus on building reliable applications and scalable systems, take on real-world challenges, collaborate with your peers. 
+    <BLANKLINE>
+    A school every software engineer would have dreamt of!
+
+Checking  the file is properly closed after reading:
+    >>> f = open("my_file_0.txt", "r")
+    >>> f.closed
+    False
+    >>> f.close()
+    >>> f.closed
+    True
