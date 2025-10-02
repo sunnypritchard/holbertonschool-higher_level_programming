@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""Module that defines a function that returns an object (Python data structure)
-represented by a JSON string.
+"""Module that defines a function that returns an object
+(Python data structure)represented by a JSON string.
 """
 import json
 
