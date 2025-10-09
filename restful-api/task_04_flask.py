@@ -56,6 +56,6 @@ def add_user():
     }
 
     return jsonify({
-        "message": f"User '{username}' added successfully!",
+        "message": "User added",
         "user": users[username]
     }), 201
