@@ -1,0 +1,52 @@
+#!/usr/bin/python3
+"""A simple HTTP server with multiple endpoints."""
+
+from http.server import BaseHTTPRequestHandler, HTTPServer
+import json
+
+
+class HTTPRequestHandler(BaseHTTPRequestHandler):
+    """Custom HTTP request handler with multiple endpoints.
+
+    Endpoints:
+        /          : Returns a welcome message.
+        /data      : Returns a JSON object with sample data.
+        /status    : Returns a plain text "OK" message.
+        Any other path : Returns a 404 Not Found message.
+    """
+    def do_GET(self):
+        if self.path == "/" or self.path == "":     # Root path
+            self.send_response(200)
+            self.send_header("Content-type", "plain/text")
+            self.end_headers()
+            msg = "Hello, this is a simple API"
+            self.wfile.write(msg.encode("utf-8"))
+
+        elif self.path == "/data":  # Data path
+            self.send_response(200)
+            self.send_header("Content-type", "application/json")
+            self.end_headers()
+            data = {"name": "John", "age": 30, "city": "New York"}
+            self.wfile.write(json.dumps(data).encode("utf-8"))
+
+        elif self.path == "/status":    # Status path
+            self.send_response(200)
+            self.send_header("Content-type", "plain/text")
+            self.end_headers()
+            status_ok = "OK"
+            self.wfile.write(status_ok.encode("utf-8"))
+
+        else:
+            self.send_response(404)
+            self.send_header("Content-type", "plain/text")
+            self.end_headers()
+            not_found = "404 Not Found"
+            self.wfile.write(not_found.encode("utf-8"))
+
+
+if __name__ == "__main__":
+    PORT = 8000
+    server_address = ("", PORT)  # Listen on all interfaces, port 8000
+    httpd = HTTPServer(server_address, HTTPRequestHandler)
+    print(f"Serving at {PORT}...")
+    httpd.serve_forever()
