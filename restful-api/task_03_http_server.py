@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env/python3
 """A simple HTTP server with multiple endpoints."""
 
 from http.server import BaseHTTPRequestHandler, HTTPServer
@@ -15,6 +15,7 @@ class HTTPRequestHandler(BaseHTTPRequestHandler):
         Any other path : Returns a 404 Not Found message.
     """
     def do_GET(self):
+        """Handle GET requests."""
         if self.path == "/" or self.path == "":     # Root path
             self.send_response(200)
             self.send_header("Content-type", "plain/text")
@@ -36,7 +37,7 @@ class HTTPRequestHandler(BaseHTTPRequestHandler):
             status_ok = "OK"
             self.wfile.write(status_ok.encode("utf-8"))
 
-        elif self.path == "/info":
+        elif self.path == "/info":  # Info path
             self.send_response(200)
             self.send_header("Content-type", "application/json")
             self.end_headers()
