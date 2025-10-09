@@ -20,7 +20,7 @@ class HTTPRequestHandler(BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-type", "plain/text")
             self.end_headers()
-            msg = "Hello, this is a simple API"
+            msg = "Hello, this is a simple API!"
             self.wfile.write(msg.encode("utf-8"))
 
         elif self.path == "/data":  # Data path
