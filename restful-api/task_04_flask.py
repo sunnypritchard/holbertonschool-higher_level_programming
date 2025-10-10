@@ -73,7 +73,7 @@ def add_user():
         return jsonify({"error": "Username is required"}), 400
 
     username = user['username']
-
+    users[username] = user.copy()
     return jsonify({"message": f"User {username} added"}), 201
 
 
