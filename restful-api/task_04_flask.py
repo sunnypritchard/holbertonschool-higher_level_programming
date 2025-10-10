@@ -1,54 +1,57 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
-This module implements a simple API using Flask, with multiple methods to
-access different endpoints.
+This modules defines a simple API using Flask,
+with multiples methods to access different routes
+and handle a POST request.
 """
-
 from flask import Flask, jsonify, request
 
 
 app = Flask(__name__)
-
-# In-memory user storage (empty requirement for this task)
 users = {}
 
 
 @app.route("/")
 def home():
-    """This method defines the root endpoint of the API.
+    """
+    This method defines a route for the root URL.
 
     Returns:
-        str: A welcome message.
+        A welcome message.
     """
     return "Welcome to the Flask API!"
 
 
 @app.route("/data")
-def data():
-    """This method allows access to the 'data' endpoint containing users data.
+def jsonify_data():
+    """
+    This methods allows to access the 'data' route containing users data.
 
     Returns:
-        json: A JSON object containing users data.
+        A JSON containing the list of all users.
     """
     return jsonify(list(users.keys()))
 
 
 @app.route("/status")
 def status():
-    """This method returns the status OK """
+    """
+    This method returns the status OK
+    """
     return "OK"
 
 
-@app.route("/users/<username>")
-def get_user(username):
-    """This method accesses a specific user by username.
-    Args:
-        username (str): The username of the user to retrieve.
+@app.route("/users/<string:username>")
+def dynamic_route(username):
+    """
+    This methods allows dynamic routing when trying
+    to access a specific user data.
 
+    Arg:
+        username: the name of the user for the route access.
     Returns:
-        json: A JSON user if user exists.
-        If user does not exist, returns a message: 'error': 'User not found'
-        followed by 404 status code.
+        The JSON user data if User exist.
+        Else return 'error': 'User not found'.
     """
     if username in users:
         response = jsonify(users[username])
@@ -60,21 +63,22 @@ def get_user(username):
 
 @app.route("/add_user", methods=["POST"])
 def add_user():
-    """This method adds a new user to the in-memory storage.
-    Expects a JSON payload with 'username' and 'data' fields.
+    """
+    This method allows to make a POST request to add a new User,
+    using JSON data.
 
     Returns:
-        json: A success message if user is added with status code 201.
-        If the username already exists, returns a message: 'error': 'User already exists'
-        followed by 400 status code.
+        If a username is provided, returns confirmation message
+        with the User data and status code 201.
+        Else return 'error': 'Username is required'.
     """
-    user = request.get_json()
-    if 'username' not in user:
+    user_data = request.get_json()
+    if 'username' not in user_data:
         return jsonify({"error": "Username is required"}), 400
 
-    username = user['username']
-    users[username] = user.copy()
-    return jsonify({"message": f"User {username} added"}), 201
+    username = user_data["username"]
+    users[username] = user_data.copy()
+    return jsonify({"message": "User added", "user": users[username]}), 201
 
 
 if __name__ == "__main__":
