@@ -6,11 +6,11 @@ This script prints a message depending on the number of arguments passed:
 - If one argument is passed, it prints "Argument found"
 - If two or more arguments are passed, it prints "Arguments found"
 */
-const argCount = process.argv.length - 2;
+const argCount = process.argv.length;
 
-if (argCount === 3) {
+if (argCount === 2) {
     console.log('No argument');
-} else if (argCount > 3) {
+} else if (argCount === 3) {
     console.log('Argument found');
 } else {
     console.log('Arguments found');
