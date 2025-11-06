@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 
 /*
 This script prints a message depending on the number of arguments passed:
