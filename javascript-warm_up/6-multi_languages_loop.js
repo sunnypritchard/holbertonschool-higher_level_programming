@@ -1,15 +1,14 @@
 #!/usr/bin/node
 
 /*
-This script prints three lines useing a loop:
+This script prints three lines of strings using an array and a loop:
 - C is fun
 - Python is cool
 - JavaScript is amazing
 */
 
-const languages = ['C', 'Python', 'JavaScript'];
-const qualities = ['fun', 'cool', 'amazing'];
+const languages = ['C is fun', 'Pyhton is cool', 'JavaScritpt is amazing'];
 
 for (let i = 0; i < languages.length; i++) {
-    console.log(languages[i] + ' is ' + qualities[i]);
+  console.log(languages[i]);
 }
