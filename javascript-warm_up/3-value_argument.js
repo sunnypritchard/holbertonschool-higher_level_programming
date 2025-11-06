@@ -1,4 +1,4 @@
-#! /usr/bin/node
+#!/usr/bin/node
 
 /*
 This script prints the first argument passed to it.
