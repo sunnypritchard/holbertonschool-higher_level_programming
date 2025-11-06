@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 
 /*
 This script concatenates two arguments passed to it.
