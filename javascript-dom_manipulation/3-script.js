@@ -17,5 +17,3 @@ const header = document.querySelector('header');
 toggleHeader.addEventListener('click', function () {
   toggleClass(header, 'red', 'green');
 });
-
-console.log('Script loaded: toggleClass on header on click');

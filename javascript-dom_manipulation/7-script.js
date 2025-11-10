@@ -24,5 +24,3 @@ function fetchAndListMovies () {
 }
 
 fetchAndListMovies();
-
-console.log('Script loaded: fetchAndListMovies');
