@@ -6,4 +6,4 @@ function updateColor (element, color) {
 
 const header = document.querySelector('header');
 updateColor(header, '#FF0000');
-console.log('Header color updated to red.');
+
